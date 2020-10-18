@@ -1,0 +1,39 @@
+<div>
+  <h2>Burgers to Devour</h2>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <div>
+      <p>
+        {{burger_name}}
+      </p>
+      <button class="devour" data-id={{id}}>Devour</button>
+    </div>
+    {{/unless}}
+    {{/each}}
+</div>
+
+<div>
+  <h2>Burgers Devoured</h2>
+    {{#each burgers}}
+    {{#if devoured}}
+    <div>
+      <p data-id={{id}}>
+        {{burger_name}}
+      </p>
+    </div>
+
+    {{/if}}
+    {{/each}}
+</div>
+
+ <h2 class="font-weight-bold">Add a Burger:</h2>
+  <form class="newBurger">
+    <div class="input-group mb-3">
+      <input id="burgerName" type="text" class="form-control" placeholder="Add burger"
+        aria-label="Add burger name">
+      <div>
+        <button type="submit">Add</button>
+      </div>
+    </div>
+  </form>
+
