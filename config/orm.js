@@ -24,9 +24,9 @@ const orm = {
     });
   },
 
-  updateOne: (tableInput, updateValues, condition, cb) => {
-    const queryString = "UPDATE ?? SET ? WHERE ?";
-    const values = [tableInput, updateValues, condition];
+  updateOne: (tableInput, value, id, cb) => {
+    const queryString = "UPDATE ?? SET ? WHERE id = ?";
+    const values = [tableInput, value, id];
 
     connection.query(queryString, values, (err, data) => {
       if (err) {
@@ -36,7 +36,5 @@ const orm = {
     });
   },
 };
-
-
 
 module.exports = orm;
